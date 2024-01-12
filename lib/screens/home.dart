@@ -4,7 +4,7 @@ import 'package:flutter_application_2/model/todo.dart';
 import 'package:flutter_application_2/widgets/todo_item.dart';
 
 class Home extends StatefulWidget {
-  Home({Key? key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
       appBar: _buildAppBar(),
       body: Stack(children: [
         Container(
-          margin: EdgeInsets.only(bottom: 60),
+          margin: const EdgeInsets.only(bottom: 60),
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
           child: Column(children: [
             searchBox(),
@@ -59,11 +59,11 @@ class _HomeState extends State<Home> {
           child: Row(children: [
             Expanded(
               child: Container(
-                margin: EdgeInsets.only(bottom: 20, right: 20, left: 20),
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                margin: const EdgeInsets.only(bottom: 20, right: 20, left: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.grey,
                       offset: Offset(0, 0),
@@ -75,13 +75,13 @@ class _HomeState extends State<Home> {
                 ),
                 child: TextField(
                   controller: _todoController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       hintText: 'Add a new task', border: InputBorder.none),
                 ),
               ),
             ),
             Container(
-              margin: EdgeInsets.only(bottom: 20, right: 20),
+              margin: const EdgeInsets.only(bottom: 20, right: 20),
               child: ElevatedButton(
                 onPressed: () {
                   _addTodoItem(_todoController.text);
@@ -89,11 +89,11 @@ class _HomeState extends State<Home> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: tdBlue,
                   foregroundColor: Colors.white,
-                  minimumSize: Size(60, 60),
+                  minimumSize: const Size(60, 60),
                   elevation: 10,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                 ),
-                child: Text(
+                child: const Text(
                   '+',
                   style: TextStyle(
                     fontSize: 40,
@@ -180,7 +180,7 @@ class _HomeState extends State<Home> {
         onChanged: (value) {
           _runFilled(value);
         },
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           contentPadding: EdgeInsets.all(15),
           hintText: 'Search',
           border: InputBorder.none,
